@@ -1,0 +1,255 @@
+/*CORPO DA PÁGINA --------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* CONTAINER PRINCIPAL */
+/* Adicione estas regras CSS ao seu arquivo style.css */
+
+/* Container principal */
+.container {
+    position: relative;
+    overflow: hidden; /* Evita que a imagem de fundo se estenda para fora do container */
+}
+
+/* Imagem de fundo */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para garantir que a imagem de fundo cubra todo o container */
+    z-index: -1; /* Para enviar a imagem de fundo para trás do conteúdo */
+}
+
+/* Overlay para a imagem de fundo */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor e opacidade do overlay */
+    z-index: -1; /* Para garantir que o overlay esteja atrás do conteúdo */
+}
+
+/* Conteúdo */
+.content {
+    position: relative; /* Para que o conteúdo fique sobre a imagem de fundo */
+    z-index: 1; /* Para garantir que o conteúdo esteja à frente da imagem de fundo */
+}
+
+.quadro-image {
+    max-width: 100%; /* Garante que a largura da imagem não ultrapasse a largura do seu contêiner */
+    max-height: 200px; /* Define a altura máxima das imagens */
+    width: auto; /* Para manter a proporção da imagem */
+    height: auto; /* Para manter a proporção da imagem */
+}
+
+/* CABEÇALHO ------------------------------------------*/
+.cabecalho {
+    width: 100%;
+    background-color: #475569;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 35px;
+    width: auto;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 200px;
+}
+
+.cabecalho-pesquisa {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #94A3B8;
+    color: white;
+    font-size: 14px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: normal; /* Remover negrito */
+    color: white;
+}
+
+/* TV SECTION */
+.tv-section {
+    width: 100%;
+    flex: 1;
+    position: relative;
+    background: url('fundo.jpg') no-repeat top center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 600px; /* Altere o valor conforme necessário */
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.70);
+    z-index: 1;
+}
+
+.content {
+    width: 100%;
+    max-width: 1184px;
+    height: 520px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.quadro {
+    width: 260px;
+    height: 248px;
+    position: relative;
+    color: white;
+}
+
+.quadro-title {
+    width: 244px;
+    height: 18px;
+    position: absolute;
+    top: 184px;
+    left: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Ubuntu;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.quadro-image {
+    width: 260px;
+    height: 171px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 6px;
+}
+
+.status {
+    width: 64px;
+    height: 17.32px;
+    position: absolute;
+    left: 98px;
+    top: 231.68px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-family: Ubuntu;
+    font-weight: 500;
+}
+
+.status.intacto {
+    background: #4ADE80;
+}
+
+.status.avariado {
+    background: #F87171;
+}
+
+.status-icon {
+    width: 12px;
+    height: 12.99px;
+    margin-left: 4px;
+    border-radius: 50%;
+    background: white;
+}
+
+.intacto-icon::before {
+    content: '';
+    width: 6px;
+    height: 4.84px;
+    background: #4ADE80;
+    position: absolute;
+    top: 4.27px;
+    left: 3px;
+    border-radius: 1px;
+}
+
+.avariado-icon::before {
+    content: '';
+    width: 6.38px;
+    height: 1.42px;
+    background: #F87171;
+    position: absolute;
+    top: 5.69px;
+    left: 2.94px;
+    transform: rotate(45deg);
+    border-radius: 1px;
+}
+
+/* RODAPÉ ------------------------------------------*/
+.rodape {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 10px;
+    background-color: #475569;
+    box-sizing: border-box;
+}
+
+.rodape a {
+    color: #ffffff;
+    text-decoration: none;
+}
